@@ -1,5 +1,20 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.header-container {
+    background-color: #007dc4;
+    color: white;
+    padding-top:7px;
+    padding-bottom:7px;
+}
+
+.bold-header {
+    font-weight:bolder;
+}
+
+.thin-header {
+    font-weight:lighter;
 }

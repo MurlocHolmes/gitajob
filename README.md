@@ -1,16 +1,12 @@
-# Practical Problem
-
-At Validic we help our customers by standarizing third party data.
-
 ## The problem:
 
 Please write a web application that uses the [Github Jobs API](https://jobs.github.com/api) to help show jobs that are broken down by city and language. While you can use any language or framework you want, please note that at Validic our UIs are using frameworks like React and Angular.
 
 ### The cities we care about are:
+- Los Angeles
 
 - Boston
 - San Francisco
-- Los Angeles
 - Denver
 - Boulder
 - Chicago
