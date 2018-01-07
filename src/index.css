@@ -18,3 +18,41 @@ body {
 .thin-header {
     font-weight:lighter;
 }
+
+.filter-label {
+    font-weight:bolder;
+}
+
+.search-button-container .btn {
+    position:absolute;
+    bottom:8px;
+    right:0;
+}
+
+.filter-container.col-4 {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.results-container.row {
+    margin-left:0;
+}
+
+.details-container {
+    margin-top:20px;
+}
+.results-container, .details-container {
+    border: ghostwhite solid 5px;
+}
+
+.results-container h3 {
+    margin-top:50px;
+}
+
+.company-name {
+    color:#b6c2cc;
+}
+
+.result-type {
+    color:green;
+}

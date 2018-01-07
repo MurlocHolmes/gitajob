@@ -3,8 +3,15 @@ import { Filter } from './components/filter';
 import Languages from './data/languages';
 import Locations from './data/locations';
 
+
+/**
+ * This class controls the search area, including the filters and the search button
+ */
 export class SearchArea extends Component {
 
+    /**
+     * Important to note that Languages and Locations are stored in separate files to decrease code clutter
+     */
     constructor(props) {
         super(props);
         this.search_options = {
@@ -21,8 +28,13 @@ export class SearchArea extends Component {
         this.setLocation = this.setLocation.bind(this);
     }
 
+    /**
+     * This function is the click handler for the filters. If we were to add more filters later, it would just mean
+     * adding a new conditional or making the function more dynamic as to not need the "ifs" at all.
+     * @param type: The criterion being updated
+     * @param criterion: The new value for the criterion
+     */
     updateFilter(type, criterion) {
-        console.log('type', type);
         if (type === 'Language') {
             this.setLanguage(criterion);
         }
@@ -31,20 +43,33 @@ export class SearchArea extends Component {
         }
     }
 
+    /**
+     * Update the language in the state to a new value
+     * @param language: The new value for the language variable
+     */
     setLanguage(language) {
         this.setState({'language': language});
     }
 
+    /**
+     * Update the location in the state to a new value
+     * @param location: The new value for the location variable
+     */
     setLocation(location) {
         this.setState({'location': location});
     }
 
+    /**
+     * To decrease code clutter, the search functionality was extracted here. This was done so that the onClick event
+     * could be 'initiate_search' rather than '() => {this.props.searchJobs(this.state.language, this.state.location)}'
+     */
     initiate_search() {
-        console.log(this.state);
         this.props.searchJobs(this.state.language, this.state.location);
     }
 
     render() {
+
+        // Create the filters for any criteria we want
         const filters = Object.keys(this.search_options).map((key, index) =>
                             <Filter
                                 key={key + '-' + index}
@@ -53,9 +78,11 @@ export class SearchArea extends Component {
                                 updateFilter={this.updateFilter}/>
                         );
         return (
-            <div className="search-container container-fluid col-12 col-lg-8 col-md-8 col-sm-10">
+            <div className="search-container row">
                 {filters}
-                <button className={'btn btn-primary'} onClick={this.initiate_search}>Search</button>
+                <div className={'col-4 search-button-container'}>
+                    <button className={'btn btn-secondary'} onClick={this.initiate_search}>Search</button>
+                </div>
             </div>
         );
     }
