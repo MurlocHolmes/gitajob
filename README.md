@@ -1,3 +1,9 @@
+Instructions to run:
+Ensure you have Node and NPM installed on your machine.
+Run npm install in Validic directory
+Run NPM start
+Navigate to http://localhost:3000
+
 ## The problem:
 
 Please write a web application that uses the [Github Jobs API](https://jobs.github.com/api) to help show jobs that are broken down by city and language. While you can use any language or framework you want, please note that at Validic our UIs are using frameworks like React and Angular.
